@@ -1,8 +1,8 @@
 import React from 'react';
 import './Header.css';
-import UserMenu from '../Navigation/UserMenu/UserMenu';
-import ColdLogicLogo from "../../assets/ColdLogicLogo";
-import Wrapper from '../../hoc/Wrapper/Wrapper';
+import UserMenu from '../UserMenu/UserMenu';
+import ColdLogicLogo from "../../../assets/ColdLogicLogo";
+import Wrapper from '../../../hoc/Wrapper/Wrapper';
 import { NavLink } from 'react-router-dom';
 
 const Header = props => {
@@ -29,4 +29,4 @@ const Header = props => {
   );
 };
 
-export default Header;
+export { Header };

@@ -46,4 +46,4 @@ class UserMenu extends Component {
   }
 }
 
-export default UserMenu;
+export { UserMenu };

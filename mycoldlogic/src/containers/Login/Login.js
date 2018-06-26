@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import LoginForm from './LoginForm/LoginForm';
 import RequestPassword from './RequestPassword/RequestPassword';
 import Header from '../../components/Header/Header';
+import { connect } from 'react-redux';
+import { 
+  logUserIn
+} from '../../actions';
 //import axios from 'axios';
 
 class Login extends Component {
@@ -70,7 +74,7 @@ class Login extends Component {
           ? (
               <LoginForm
                 togglePasswordRequest={this.requestPass}
-                authenticateUser={this.authenticateUser}
+                authenticateUser={this.props.logUserIn}
                 changeUsername={this.usernameChangeHandler}
                 changePassword={this.userPasswordChangeHandler}
                 username={this.state.username}
@@ -91,4 +95,9 @@ class Login extends Component {
   }
 }
 
-export default Login;
+const mapStateToProps = state => {
+  return {
+    auth: state.auth
+  }
+};
+export default connect(mapStateToProps, { logUserIn })(Login);
